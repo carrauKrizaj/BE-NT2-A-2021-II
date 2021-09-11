@@ -23,8 +23,9 @@ const classNames = {
     //TODO: buscar la forma de ver si el checkbox esta tildado o no. 
     // Si NO esta tildado hay que decrementar
     // totalTareasPendientes
-
-
+    if(document.getElementById('chk')){
+      totalTareasPendientes--
+    }
 
     renderizarContadores()
   }
@@ -34,6 +35,8 @@ const classNames = {
     const checkbox = document.createElement('input')
     checkbox.type = 'checkbox'
     checkbox.className = classNames.TODO_CHECKBOX
+    checkbox.id = 'chk'
+    checkbox.onclick = checkToDo
 
     const span = document.createElement('span')
     span.className = classNames.TODO_TEXT
@@ -74,4 +77,17 @@ const classNames = {
 
     }
      
+  }
+ 
+  function checkToDo(){
+      
+    if(!this.checked){
+      console.log("hace algo")
+        totalTareasPendientes++
+      } else {
+        console.log("hace otro algo")
+        totalTareasPendientes--  
+      }
+
+      renderizarContadores()
   }
