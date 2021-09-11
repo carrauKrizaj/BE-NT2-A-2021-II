@@ -82,10 +82,10 @@ const classNames = {
   function checkToDo(){
       
     if(!this.checked){
-      console.log("hace algo")
+      //console.log("hace algo")
         totalTareasPendientes++
       } else {
-        console.log("hace otro algo")
+        //console.log("hace otro algo")
         totalTareasPendientes--  
       }
 
