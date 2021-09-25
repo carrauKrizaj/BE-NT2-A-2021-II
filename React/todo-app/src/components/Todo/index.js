@@ -1,11 +1,13 @@
 import React from "react";
 
-export default ({ todo, callbackBorrado }) => {
+const todo = ({ todo, callbackBorrado, callbackChecked }) => {
     return (
         <li className="todo-container">
-            <input type="checkbox" checked={todo.checked} /> 
+            <input type="checkbox" checked={todo.checked} onChange={() => callbackChecked(todo)} />
             <span> {todo.title}</span>
             <button onClick={() => callbackBorrado(todo)}> X </button>
         </li>
     )
 }
+
+export default todo 
